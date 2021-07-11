@@ -1,0 +1,343 @@
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Stop Marine Pollution</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href= "{{  url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #f8f8f8;
+}
+
+/* Global button style */
+.button {
+  font-family: inherit;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  outline: none;
+  color: #ffffff;
+  background-color: rgb(0, 120, 212);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  font-size: 2rem;
+  min-width: 10rem;
+}
+
+.button:hover {
+  background-color: rgb(16, 110, 190);
+}
+
+.button.disabled {
+  pointer-events: none;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+/* Main section */
+
+.main {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main .title h3 {
+  font-size: 2.3rem;
+  font-weight: 300;
+  margin: 0.8rem 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.reveal {
+  opacity: 0;
+}
+
+.reveal:hover {
+  opacity: 0.2;
+}
+
+/* Upload box */
+.upload-box {
+  font-size: 2rem;
+  color: #666666;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem 0 2rem 0;
+}
+
+.upload-box.dragover {
+  /* background-color: grey; */
+  color: #eeeeee;
+  border: 0.1rem solid rgb(0, 120, 212);
+  box-shadow: inset 0 0 0 0.1rem rgb(0, 120, 212);
+}
+
+.upload-box:hover {
+  border-color: rgb(0, 120, 212);
+}
+
+.upload-box #image-preview {
+  max-width: 14rem;
+  max-height: 8rem;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+#image-result {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  max-height: 20rem;
+}
+#btn {
+  font-size:36px;
+  border: none;
+  padding: 16px 32px;
+  text-align: center;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+#btn:hover {opacity: 1}
+#image-box {
+  position: relative;
+  width: auto;
+  float: left;
+  margin-bottom: 2rem;
+}
+
+#image-display {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  max-height: 20rem;
+}
+
+#image-display.loading {
+  filter: brightness(30%);
+}
+
+#pred-result {
+  color: white;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  margin: 0 auto;
+}
+
+/* Animation */
+#spinner {
+  box-sizing: border-box;
+  stroke: #cccccc;
+  stroke-width: 3px;
+  transform-origin: 50%;
+  animation: line 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite,
+    rotate 1.6s linear infinite;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(450deg);
+  }
+}
+@keyframes line {
+  0% {
+    stroke-dasharray: 2, 85.964;
+    transform: rotate(0);
+  }
+  50% {
+    stroke-dasharray: 65.973, 21.9911;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 2, 85.964;
+    stroke-dashoffset: -65.973;
+    transform: rotate(90deg);
+  }
+}
+.form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+</style>
+  <!-- Custom fonts for this template -->
+  <link href="{{  url_for('static', filename='vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+  <link href="{{  url_for('static', filename= 'https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic')}}" rel='stylesheet' type='text/css'>
+  <link href="{{  url_for('static', filename='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800')}}" rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="{{  url_for('static', filename='css/clean-blog.min.css')}}" rel="stylesheet">
+
+</head>
+
+<body >
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="col-sm-4 col-xs-8">
+
+                   <a class="navbar-brand" href="/">
+                <img class="w-24 h-24 rounded-full shadow-md" src="{{ url_for('static',filename='asd.jpg') }}" style="width:160px;height:150px;background: transparent;border-radius:9999px;"/></a>
+            
+        
+    </div>
+  <div class="container">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">About</a>
+          <div class="dropdown-menu">
+              <a class="dropdown-item" href="/mission">Mission</a>
+              <a class="dropdown-item" href="/team">Our Team</a>
+              <div class="dropdown-divider"></div>
+          </div>
+        </li>
+
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
+          <div class="dropdown-menu">
+              <a class="dropdown-item" href="/object">Plastic Object Detection</a>
+              <a class="dropdown-item" href="/hotspot">Plastic Hotspot Detection</a>
+              <div class="dropdown-divider"></div>
+          </div>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{{url_for('static',filename='img/deep.jpg')}}')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h2>Plastic Object Detection</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<header style="height:100%; background-image: url('{{url_for('static',filename='img/new.jpg')}}');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;">
+<div>
+    <br/>
+    <div class="row justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-8">
+                            <form class="card card-sm">
+                                <div class="card-body row no-gutters align-items-center">
+                                    <div class="col-auto">
+                                        <i class="fas fa-upload h4 text-body"></i>
+                                    </div>
+                                    <!--end of col-->
+                                    <div class="col">
+                                        <input id="file-upload" class="hidden" type="file" accept="image/x-png,image/gif,image/jpeg" placeholder="Search topics or keywords">
+                                        <label for="file-upload" id="file-drag" class="upload-box" >
+                                          <div id="upload-caption">Drop image here or click to select</div>
+                                        </label>
+                                    </div>
+                                    <!--end of col-->
+                                    <input id="file-upload" class="hidden" type="file" accept="image/x-png,image/gif,image/jpeg">
+                                    <label for="file-upload">
+                                    <a style="flex-direction: column;    display: flex;
+                                        justify-content: center; align-items: center;
+    height: 100%;
+    padding-bottom: .25em;">
+    <i id="btn" class="fa fa-camera" ></i>
+                                    <span> Upload</span>
+                                    </a>
+                                    </label>
+                                       <!-- <button class="btn btn-lg btn-success" type="submit">Search</button>-->
+                                    </div>
+                                    <!--end of col-->
+                                    
+                                </div>
+                                
+                            </form>
+                            
+                        </div>
+                        <!--end of col-->
+                        <div style="margin-bottom: 2rem;display: flex;
+  justify-content: center;
+  align-items: center;">
+                          <input type="button" value="Predict" class="button" onclick="submitImage()" style="margin:5px;" />
+                          <br>
+                          <input type="button" value="Clear" class="button" onclick="clearImage();" style="margin:5px;" />
+                        </div>
+                        <div style="margin-bottom: 2rem;display: flex;
+                         justify-content: center;
+                         align-items: center;">
+                        <div  id="image-box">
+                          <img id="image-display" />
+                          <div id="pred-result" class="hidden"></div>
+                          <svg id="loader" class="hidden" viewBox="0 0 32 32" width="32" height="32">
+                            <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+                          </svg>
+                          <div class="title">
+                          <h2 id="timepass" style="color:white;  text-align: center;"></h2>
+                          
+                          </div>
+                        </div>
+                        
+                    </div>
+                        </div>
+</div>
+<script src="{{  url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+<script src="{{  url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+<!-- Custom scripts for this template -->
+<script src="{{  url_for('static', filename='js/clean-blog.min.js')}}"></script>
+<script src="{{ url_for('static',filename='index.js') }}"></script>
+</header>
+</body>

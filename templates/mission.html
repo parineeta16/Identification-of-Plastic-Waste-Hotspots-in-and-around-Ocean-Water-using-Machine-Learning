@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Stop Marine Pollution</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href= "{{  url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="{{  url_for('static', filename='vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+  <link href="{{  url_for('static', filename= 'https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic')}}" rel='stylesheet' type='text/css'>
+  <link href="{{  url_for('static', filename='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800')}}" rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="{{  url_for('static', filename='css/clean-blog.min.css')}}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="col-sm-4 col-xs-8">
+
+                     <a class="navbar-brand" href="/">
+                  <img class="w-24 h-24 rounded-full shadow-md" src="{{ url_for('static',filename='asd.jpg') }}" style="width:160px;height:150px;background: transparent;border-radius:9999px;"/></a>
+              
+          
+      </div>
+    <div class="container">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">About</a>
+            <div class="dropdown-menu">
+                  <a class="dropdown-item" href="/mission">Mission</a>
+                  <a class="dropdown-item" href="/team">Our Team</a>
+                  <div class="dropdown-divider"></div>
+            </div>
+          </li>
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
+            <div class="dropdown-menu">
+                  <a class="dropdown-item" href="/object">Plastic Object Detection</a>
+                  <a class="dropdown-item" href="/hotspot">Plastic Hotspot Detection</a>
+                  <div class="dropdown-divider"></div>
+            </div>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{url_for('static',filename='img/home2.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h2>Our mission is to help mitigate Marine Pollution using various Machine Learning Techniques</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-15 mb-5">
+        <p>70% of the oxygen we breathe and 97% of the world’s water supply is provided by oceans. In the past 10 years, the total plastic produced is more than the total plastic produced during the whole last century. Most of this plastic is thrown into the water. Plastic never fully biodegrades. Instead, it breaks down under UV light into smaller pieces and releases harmful content in the marine environment. With an increase in plastic contents in the water, the ocean and its marine life are struggling to survive. If humans are exposed to these harmful contents for a long period of time, it can result in hazardous health problems such as reproductive issues, hormonal issues, and damage to the kidneys and nervous system. Hence, it’s high time that we start taking care of our oceans.</p>
+        <div class="container">
+
+    <!-- Heading Row -->
+    <div class="row align-items-center my-5">
+      <div class="col-lg-7">
+        <img class="img-fluid rounded mb-4 mb-lg-0" src="{{url_for('static',filename='img/Stat1.png')}}" alt="">
+      </div>
+      <!-- /.col-lg-8 -->
+      <div class="col-lg-5">
+        The image represents Zone wise Collected Distribution of Plastic Pollutants in California for the year 2019.</p>
+      </div>
+      <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+    <p>There are two types of plastics: micro and macro plastics. Microplastics being less than 5mm in size are hard to be seen as they are less visible compared to the macro plastics that are larger and usually found on surface water. The plastic, when left unhandled, breaks down into smaller particles and sinks to the ocean floor. Abundant amounts of plastic under ocean water leads to oxygen deficiency. Plastic bread down to release toxins that poison the aquatic animals. This, in turn, affects humans if they consume them for food. Another major problem with ocean plastic management is the expense required to clean up. It takes millions of dollars to clean up a small part of the ocean or the coastal areas each year. According to stats, more than 170 million tons of plastic circulates in and around the ocean.</p>
+    <!-- Heading Row -->
+    <div class="row align-items-center my-5">
+      <div class="col-lg-7">
+        <img class="img-fluid rounded mb-4 mb-lg-0" src="{{url_for('static',filename='img/Stat2.png')}}" alt="">
+      </div>
+      <!-- /.col-lg-8 -->
+      <div class="col-lg-5">
+        The image represents Collected Distribution of Plastic Pollutants in California for the year 2019.</p>
+      </div>
+      <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+    <p>The Identification of Plastic waste hotspots in and around ocean water will help to mitigate the plastic waste problems. The machine learning model will help to predict the location of plastic waste. There are several primary, required, and arbitrary features that are part of the project.
+    The machine learning model should be efficient. It must be able to differentiate between other waste, as well as consider the volume of waste.</p>
+    <!-- Heading Row -->
+    <div class="row align-items-center my-5">
+      <div class="col-lg-7">
+        <img class="img-fluid rounded mb-4 mb-lg-0" src="{{url_for('static',filename='img/Stat3.png')}}" alt="">
+      </div>
+      <!-- /.col-lg-8 -->
+      <div class="col-lg-5">
+        The image represents Month-wise collection of plastic pollutants in California for the year 2019.</p>
+      </div>
+      <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+    <p> Our mission is to build accurate and efficient plastic object detection and recognition systems using machine learning techniques. We aim to create a high quality plastic object detection model capable of detecting micro plastic with high accuracy. This can help ships, drifters, autonomous underwater vehicles (AUVs), gliders, and others in identifying plastic waste hotspots efficiently.
+    Furthermore, we plan to monitor the direction of movement of plastic hotspots to assist in ocean cleaning activities.
+
+
+
+ <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://github.com/parineeta16/Identification-of-Plastic-Waste-Hotspots-in-and-around-Ocean-Water-using-Machine-Learning" target = "_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; Your Website 2020</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="{{  url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{  url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="{{  url_for('static', filename='js/clean-blog.min.js')}}"></script>
+
+
+</body>
+
+</html>
+
+
